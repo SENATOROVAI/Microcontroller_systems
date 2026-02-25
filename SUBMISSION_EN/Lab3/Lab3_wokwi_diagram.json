@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "author": "Anton Ivanov",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 200,
+      "left": 300,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 50,
+      "left": 400,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 130,
+      "left": 360,
+      "attrs": { "value": "330" }
+    },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": 300, "left": 340, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd2", "top": 10, "left": 390, "attrs": {} }
+  ],
+  "connections": [
+    [ "btn1:1.l", "uno:2", "green", [] ],
+    [ "r1:1", "uno:4", "green", [] ],
+    [ "gnd1:GND", "btn1:2.r", "black", [] ],
+    [ "led1:A", "r1:2", "green", [] ],
+    [ "gnd2:GND", "led1:C", "black", [] ]
+  ],
+  "serialMonitor": {
+    "display": "always",
+    "newline": "lf"
+  },
+  "dependencies": {}
+}
